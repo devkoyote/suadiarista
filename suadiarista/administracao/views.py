@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .forms import ServicoForm
+from .models import Servico
 
 # Create your views here.
 def cadastrar_servico(request):
@@ -8,6 +9,12 @@ def cadastrar_servico(request):
         form_servico = ServicoForm(request.POST)
         if form_servico.is_valid():
             form_servico.save()
+            return redirect('listar_servicos')
     else:
         form_servico = ServicoForm()
     return render(request, 'servicos/form_servico.html', {"form_servico": form_servico})
+
+def listar_servico(request):
+    # Consult all datas
+    servicos = Servico.objects.all()
+    return render(request, 'servicos/lista_servico.html', {'servicos': servicos})

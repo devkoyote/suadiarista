@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'suadiarista',
         'HOST': 'localhost',
         'PORT': 3306,
-        "USER": 'root',
+        "USER": 'koyote',
         "PASSWORD": '@Hitler321'
     }
 }

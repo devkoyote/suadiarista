@@ -80,6 +80,14 @@
         "documentation": {}
     },
     {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -178,7 +186,7 @@
         "kind": 5,
         "importPath": "suadiarista.administracao.urls",
         "description": "suadiarista.administracao.urls",
-        "peekOfCode": "urlpatterns = [\n    # default \n    path('servicos/cadastrar', cadastrar_servico , name='cadastrar_servico'),\n]",
+        "peekOfCode": "urlpatterns = [\n    # default \n    path('servicos/cadastrar', cadastrar_servico , name='cadastrar_servico'),\n    path('servicos/listar', listar_servico, name='listar_servicos'),\n]",
         "detail": "suadiarista.administracao.urls",
         "documentation": {}
     },
@@ -187,7 +195,16 @@
         "kind": 2,
         "importPath": "suadiarista.administracao.views",
         "description": "suadiarista.administracao.views",
-        "peekOfCode": "def cadastrar_servico(request):\n    # validate method \n    if request.method == \"POST\":\n        form_servico = ServicoForm(request.POST)\n        if form_servico.is_valid():\n            form_servico.save()\n    else:\n        form_servico = ServicoForm()\n    return render(request, 'servicos/form_servico.html', {\"form_servico\": form_servico})",
+        "peekOfCode": "def cadastrar_servico(request):\n    # validate method \n    if request.method == \"POST\":\n        form_servico = ServicoForm(request.POST)\n        if form_servico.is_valid():\n            form_servico.save()\n            return redirect('listar_servicos')\n    else:\n        form_servico = ServicoForm()\n    return render(request, 'servicos/form_servico.html', {\"form_servico\": form_servico})",
+        "detail": "suadiarista.administracao.views",
+        "documentation": {}
+    },
+    {
+        "label": "listar_servico",
+        "kind": 2,
+        "importPath": "suadiarista.administracao.views",
+        "description": "suadiarista.administracao.views",
+        "peekOfCode": "def listar_servico(request):\n    # Consult all datas\n    servicos = Servico.objects.all()\n    return render(request, 'servicos/lista_servico.html', {'servicos': servicos})",
         "detail": "suadiarista.administracao.views",
         "documentation": {}
     },
@@ -277,7 +294,7 @@
         "kind": 5,
         "importPath": "suadiarista.suadiarista.settings",
         "description": "suadiarista.suadiarista.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'suadiarista.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.1/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'suadiarista',\n        'HOST': 'localhost',\n        'PORT': 3306,\n        \"USER\": 'root',",
+        "peekOfCode": "WSGI_APPLICATION = 'suadiarista.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.1/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'suadiarista',\n        'HOST': 'localhost',\n        'PORT': 3306,\n        \"USER\": 'koyote',",
         "detail": "suadiarista.suadiarista.settings",
         "documentation": {}
     },
@@ -286,7 +303,7 @@
         "kind": 5,
         "importPath": "suadiarista.suadiarista.settings",
         "description": "suadiarista.suadiarista.settings",
-        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'suadiarista',\n        'HOST': 'localhost',\n        'PORT': 3306,\n        \"USER\": 'root',\n        \"PASSWORD\": '@Hitler321'\n    }\n}",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'suadiarista',\n        'HOST': 'localhost',\n        'PORT': 3306,\n        \"USER\": 'koyote',\n        \"PASSWORD\": '@Hitler321'\n    }\n}",
         "detail": "suadiarista.suadiarista.settings",
         "documentation": {}
     },

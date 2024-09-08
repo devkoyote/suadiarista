@@ -7,4 +7,5 @@ from .views import *
 urlpatterns = [
     # default 
     path('servicos/cadastrar', cadastrar_servico , name='cadastrar_servico'),
+    path('servicos/listar', listar_servico, name='listar_servicos'),
 ]
