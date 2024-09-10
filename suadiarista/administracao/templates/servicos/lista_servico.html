@@ -26,7 +26,7 @@ Listagem de Serviços
                     <td>{{servico.nome}}</td>
                     <td>{{servico.valor_minimo}}</td>
                     <td>
-                        <a href="#">Editar</a>
+                        <a href="{% url 'editar_servico' servico.id %}">Editar</a>
                     </td>
                 </tr>
                 {% endfor %}
@@ -34,4 +34,7 @@ Listagem de Serviços
         </table>
     </div>
  </div>
+
+ <a href="{% url 'cadastrar_servico' %}" class="btn btn-primary">Cadastrar</a>
+
 {% endblock content %}
