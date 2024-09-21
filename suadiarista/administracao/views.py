@@ -8,6 +8,7 @@ def cadastrar_servico(request):
     if request.method == "POST":
         form_servico = ServicoForm(request.POST)
         if form_servico.is_valid():
+            
             form_servico.save()
             return redirect('listar_servicos')
     else:

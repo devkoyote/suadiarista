@@ -1,5 +1,56 @@
 [
     {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "site",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "site",
+        "description": "site",
+        "detail": "site",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -56,6 +107,22 @@
         "documentation": {}
     },
     {
+        "label": "widgets",
+        "importPath": "django.forms",
+        "description": "django.forms",
+        "isExtraImport": true,
+        "detail": "django.forms",
+        "documentation": {}
+    },
+    {
+        "label": "Decimal",
+        "importPath": "decimal",
+        "description": "decimal",
+        "isExtraImport": true,
+        "detail": "decimal",
+        "documentation": {}
+    },
+    {
         "label": "TestCase",
         "importPath": "django.test",
         "description": "django.test",
@@ -96,15 +163,6 @@
         "documentation": {}
     },
     {
-        "label": "os",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
-        "documentation": {}
-    },
-    {
         "label": "get_asgi_application",
         "importPath": "django.core.asgi",
         "description": "django.core.asgi",
@@ -137,12 +195,84 @@
         "documentation": {}
     },
     {
-        "label": "sys",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "sys",
-        "description": "sys",
-        "detail": "sys",
+        "label": "bin_dir",
+        "kind": 5,
+        "importPath": ".virtual.bin.activate_this",
+        "description": ".virtual.bin.activate_this",
+        "peekOfCode": "bin_dir = os.path.dirname(abs_file)\nbase = bin_dir[: -len(\"bin\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))",
+        "detail": ".virtual.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "base",
+        "kind": 5,
+        "importPath": ".virtual.bin.activate_this",
+        "description": ".virtual.bin.activate_this",
+        "peekOfCode": "base = bin_dir[: -len(\"bin\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)",
+        "detail": ".virtual.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"PATH\"]",
+        "kind": 5,
+        "importPath": ".virtual.bin.activate_this",
+        "description": ".virtual.bin.activate_this",
+        "peekOfCode": "os.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix",
+        "detail": ".virtual.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV\"]",
+        "kind": 5,
+        "importPath": ".virtual.bin.activate_this",
+        "description": ".virtual.bin.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".virtual.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV_PROMPT\"]",
+        "kind": 5,
+        "importPath": ".virtual.bin.activate_this",
+        "description": ".virtual.bin.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".virtual.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "prev_length",
+        "kind": 5,
+        "importPath": ".virtual.bin.activate_this",
+        "description": ".virtual.bin.activate_this",
+        "peekOfCode": "prev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".virtual.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.path[:]",
+        "kind": 5,
+        "importPath": ".virtual.bin.activate_this",
+        "description": ".virtual.bin.activate_this",
+        "peekOfCode": "sys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".virtual.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.real_prefix",
+        "kind": 5,
+        "importPath": ".virtual.bin.activate_this",
+        "description": ".virtual.bin.activate_this",
+        "peekOfCode": "sys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".virtual.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.prefix",
+        "kind": 5,
+        "importPath": ".virtual.bin.activate_this",
+        "description": ".virtual.bin.activate_this",
+        "peekOfCode": "sys.prefix = base",
+        "detail": ".virtual.bin.activate_this",
         "documentation": {}
     },
     {
@@ -152,6 +282,15 @@
         "description": "suadiarista.administracao.migrations.0001_initial",
         "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Servico',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('nome', models.CharField(max_length=50)),",
         "detail": "suadiarista.administracao.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "suadiarista.administracao.migrations.0002_alter_servico_porcentagem_comissao_and_more",
+        "description": "suadiarista.administracao.migrations.0002_alter_servico_porcentagem_comissao_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('administracao', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='servico',\n            name='porcentagem_comissao',\n            field=models.DecimalField(decimal_places=2, max_digits=5),\n        ),",
+        "detail": "suadiarista.administracao.migrations.0002_alter_servico_porcentagem_comissao_and_more",
         "documentation": {}
     },
     {
@@ -168,7 +307,7 @@
         "kind": 6,
         "importPath": "suadiarista.administracao.forms",
         "description": "suadiarista.administracao.forms",
-        "peekOfCode": "class ServicoForm(forms.ModelForm):\n    class Meta:\n        model = Servico\n        fields = '__all__'",
+        "peekOfCode": "class ServicoForm(forms.ModelForm):\n    # add mask in values \n    valor_minimo = forms.CharField(widget=forms.TextInput(attrs={'class': 'money'}))\n    porcentagem_comissao = forms.CharField(widget=forms.TextInput(attrs={'class': 'money'}))\n    valor_quarto = forms.CharField(widget=forms.TextInput(attrs={'class': 'money'}))\n    valor_sala = forms.CharField(widget=forms.TextInput(attrs={'class': 'money'}))\n    valor_banheiro = forms.CharField(widget=forms.TextInput(attrs={'class': 'money'}))\n    valor_quintal = forms.CharField(widget=forms.TextInput(attrs={'class': 'money'}))\n    valor_cozinha = forms.CharField(widget=forms.TextInput(attrs={'class': 'money'}))\n    valor_outros = forms.CharField(widget=forms.    TextInput(attrs={'class': 'money'}))",
         "detail": "suadiarista.administracao.forms",
         "documentation": {}
     },
@@ -177,7 +316,7 @@
         "kind": 6,
         "importPath": "suadiarista.administracao.models",
         "description": "suadiarista.administracao.models",
-        "peekOfCode": "class Servico(models.Model):\n    ICONE_CHOISES = [\n        ('tfw-cleaning-1','tfw-cleaning-1'),\n        ('tfw-cleaning-2','tfw-cleaning-2'),\n        ('tfw-cleaning-3','tfw-cleaning-3'),\n    ]\n    nome = models.CharField(max_length=50, null=False, blank=False)\n    valor_minimo = models.FloatField(null=False, blank=False)\n    qtd_horas = models.IntegerField(null=False, blank=False)\n    porcentagem_comissao = models.FloatField(null=False, blank=False)",
+        "peekOfCode": "class Servico(models.Model):\n    ICONE_CHOISES = [\n        ('tfw-cleaning-1','tfw-cleaning-1'),\n        ('tfw-cleaning-2','tfw-cleaning-2'),\n        ('tfw-cleaning-3','tfw-cleaning-3'),\n    ]\n    nome = models.CharField(max_length=50, null=False, blank=False)\n    valor_minimo = models.DecimalField(null=False, blank=False, decimal_places=2, max_digits=5) \n    qtd_horas = models.IntegerField(null=False, blank=False)\n    porcentagem_comissao = models.DecimalField(null=False, blank=False, decimal_places=2, max_digits=5)",
         "detail": "suadiarista.administracao.models",
         "documentation": {}
     },
@@ -186,7 +325,7 @@
         "kind": 5,
         "importPath": "suadiarista.administracao.urls",
         "description": "suadiarista.administracao.urls",
-        "peekOfCode": "urlpatterns = [\n    # default \n    path('servicos/cadastrar', cadastrar_servico , name='cadastrar_servico'),\n    path('servicos/listar', listar_servico, name='listar_servicos'),\n]",
+        "peekOfCode": "urlpatterns = [\n    # default \n    path('servicos/cadastrar', cadastrar_servico , name='cadastrar_servico'),\n    path('servicos/listar', listar_servico, name='listar_servicos'),\n    path('servicos/editar/<int:id>', editar_servico, name='editar_servico')\n]",
         "detail": "suadiarista.administracao.urls",
         "documentation": {}
     },
@@ -204,7 +343,16 @@
         "kind": 2,
         "importPath": "suadiarista.administracao.views",
         "description": "suadiarista.administracao.views",
-        "peekOfCode": "def listar_servico(request):\n    # Consult all datas\n    servicos = Servico.objects.all()\n    return render(request, 'servicos/lista_servico.html', {'servicos': servicos})",
+        "peekOfCode": "def listar_servico(request):\n    # Consult all datas\n    servicos = Servico.objects.all()\n    return render(request, 'servicos/lista_servico.html', {'servicos': servicos})\ndef editar_servico(request, id):\n    # capture object first\n    servico = Servico.objects.get(id=id)\n    form_servico = ServicoForm(request.POST or None, instance=servico)\n    # validate [datas]\n    if form_servico.is_valid():",
+        "detail": "suadiarista.administracao.views",
+        "documentation": {}
+    },
+    {
+        "label": "editar_servico",
+        "kind": 2,
+        "importPath": "suadiarista.administracao.views",
+        "description": "suadiarista.administracao.views",
+        "peekOfCode": "def editar_servico(request, id):\n    # capture object first\n    servico = Servico.objects.get(id=id)\n    form_servico = ServicoForm(request.POST or None, instance=servico)\n    # validate [datas]\n    if form_servico.is_valid():\n        form_servico.save()\n        #redirect for list\n        return redirect('listar_servicos')\n    # return form_servicos [datas]",
         "detail": "suadiarista.administracao.views",
         "documentation": {}
     },
@@ -258,7 +406,7 @@
         "kind": 5,
         "importPath": "suadiarista.suadiarista.settings",
         "description": "suadiarista.suadiarista.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'administracao',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'adminlte3'\n]",
+        "peekOfCode": "INSTALLED_APPS = [\n    'administracao',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'adminlte3',\n    'bootstrap4',",
         "detail": "suadiarista.suadiarista.settings",
         "documentation": {}
     },
